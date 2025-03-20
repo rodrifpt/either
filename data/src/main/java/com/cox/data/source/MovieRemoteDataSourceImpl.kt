@@ -6,6 +6,9 @@ import com.cox.domain.util.DomainErrorFactory
 import com.cox.domain.util.Either
 import javax.inject.Inject
 
+/**
+ * Test class of [com.cox.data.source.MovieRemoteDataSourceImplTest]
+ */
 class MovieRemoteDataSourceImpl @Inject constructor(
     private val movieService: IMovieApi
 ) : IMovieRemoteDataSource {

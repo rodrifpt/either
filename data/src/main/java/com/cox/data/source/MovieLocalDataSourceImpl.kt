@@ -7,6 +7,9 @@ import com.cox.domain.util.Either
 import com.cox.domain.util.ErrorType
 import javax.inject.Inject
 
+/**
+ * Test class of [com.cox.data.source.MovieLocalDataSourceImplTest]
+ */
 class MovieLocalDataSourceImpl @Inject constructor(
     private val movieDao: IMovieDao
 ) : IMovieLocalDataSource {

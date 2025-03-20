@@ -12,6 +12,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Test class of [com.cox.poc.MovieViewModelTest]
+ */
+
 @HiltViewModel
 class MovieViewModel @Inject constructor(private val useCase: GetUpcomingMoviesUseCase) :
     ViewModel() {

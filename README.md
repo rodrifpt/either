@@ -1,7 +1,3 @@
-# Research on Switching to `Either` for Error Handling in the NGC App
-
----
-
 ## **Introduction**
 The NGC app currently uses Kotlin's `Result` type for handling network requests and error handling. This document explores the advantages and disadvantages of switching to the `Either` type for error handling. The goal is to provide a clear comparison to help the team make an informed decision.
 

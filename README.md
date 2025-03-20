@@ -80,9 +80,31 @@ Switching to `Either` can improve error handling and code clarity, especially in
 
 If the team is comfortable with functional programming and the benefits outweigh the costs, switching to `Either` is a good choice. Otherwise, sticking with `Result` may be more practical.
 
+<img src="docs/images/modularization_diagram.png" width="400" />
 ---
+## Project Structure
 
+The project is modularized into three main layers:
+
+- **App**: Contains the user interface and presentation logic.
+- **Domain**: Contains the business logic, which is platform-independent.
+- **Data**: Handles data access, including API connections and local database management.
+
+### Modularization Diagram
+
+<img src="https://github.com/user-attachments/assets/984fa8fe-4468-463d-8c31-a22c879ac5e0" width="400" />
+
+### Key Dependencies
+
+- **Retrofit**: Used in the `Data` module for API calls.
+- **Room**: Used in the `Data` module for local database management.
+- **Hilt**: Used across all modules for dependency injection.
+---
 ## **Conclusion**
 The decision to switch from `Result` to `Either` should be based on the team's needs, familiarity with functional programming, and the specific requirements of the NGC app. While `Either` offers several advantages, such as explicit error handling and custom error types, it also introduces challenges like a steeper learning curve and increased boilerplate. A careful evaluation of these factors will help the team make the best decision for the project.
 
 ---
+## **Diagram APP**
+<img src="https://github.com/user-attachments/assets/562cc7e9-2d4a-4d5d-b8c1-9b5fc052b986" width="400" />
+<img src="https://github.com/user-attachments/assets/a73ddb8f-2c5b-4ac9-9fdf-4b88bbda44b9" width="600"  />
+

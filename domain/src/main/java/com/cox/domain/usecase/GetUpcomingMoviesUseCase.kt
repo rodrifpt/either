@@ -5,6 +5,9 @@ import com.cox.domain.repository.IMovieRepository
 import com.cox.domain.util.DomainErrorFactory
 import com.cox.domain.util.Either
 
+/**
+ * Test class of [com.cox.domain.usecase.GetUpcomingMoviesUseCase]
+ */
 class GetUpcomingMoviesUseCase(
     private val repository: IMovieRepository
 ) {

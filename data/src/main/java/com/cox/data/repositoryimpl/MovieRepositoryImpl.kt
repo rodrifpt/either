@@ -10,13 +10,15 @@ import com.cox.domain.util.DomainErrorFactory
 import com.cox.domain.util.Either
 import javax.inject.Inject
 
+/**
+ * Test class of [com.cox.data.repositoryimpl.MovieRepositoryImplTest]
+ */
 class MovieRepositoryImpl @Inject constructor(
     private val remoteDataSource: IMovieRemoteDataSource,
     private val localDataSource: IMovieLocalDataSource
 ) : IMovieRepository {
 
     override suspend fun getUpcoming(page: Int): Either<DomainErrorFactory, List<ResultResponse>> {
-
         if (page <= 0) {
             return Either.Left(
                 DomainErrorFactory.businessError("Page number must be greater than 0.")
@@ -36,12 +38,13 @@ class MovieRepositoryImpl @Inject constructor(
                 // If there's an API error, try to get the data from the local database
                 when (val localResult = localDataSource.getUpcomingMovies()) {
                     is Either.Right -> {
-                        if (localResult.value.isNotEmpty())
+                        if (localResult.value.isNotEmpty()) {
                             Either.Right(localResult.value.map { it.toDomain() })
-                         else
+                        } else {
                             remoteResult // Return the API error if there's no local data
+                        }
                     }
-                    is Either.Left -> localResult // Return the database error
+                    is Either.Left -> remoteResult // Return the API error if the local database also fails
                 }
             }
         }
